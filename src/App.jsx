@@ -1,11 +1,7 @@
 // import React from 'react'
 
 import { useDispatch, useSelector } from "react-redux";
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-} from "./Reducers/CounterSlice";
+import { decrement, increment, incrementAsync } from "./Reducers/CounterSlice";
 
 const App = () => {
   const { value } = useSelector((state) => state.counter);
@@ -30,7 +26,7 @@ const App = () => {
           Decrement
         </button>
         <button
-          onClick={() => dispatch(incrementByAmount(5))}
+          onClick={() => dispatch(incrementAsync(5))}
           className="border border-2 border-red-900 rounded-lg px-5 py-2 bg-transparent hover:bg-red-900 hover:text-red-200 mr-5"
         >
           Increment By 5
